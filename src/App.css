@@ -25,6 +25,9 @@
   border: 2px white solid;
   color: white;
   z-index: 2;
+  font-size: 45px;
+  padding: 20px 50px;
+  text-shadow: 1px 1px 30px black;
 }
 
 .App-title {
