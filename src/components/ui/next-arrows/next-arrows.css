@@ -1,0 +1,50 @@
+.next-arrow {
+  position: absolute;
+  transform: rotate(90deg);
+  z-index: 2;
+  color: white;
+  letter-spacing: 5px;
+  padding: 15px;
+  opacity: 1;
+  transition: opacity 1s ease;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+#arrow3 {
+  animation: flash1 2s infinite;
+  bottom: 50px;
+}
+
+#arrow2 {
+  animation: flash2 2s infinite;
+  bottom: 30px;
+}
+
+#arrow1 {
+  animation: flash3 2s infinite;
+  bottom: 10px;
+}
+
+@keyframes flash1 {
+  25%,
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes flash2 {
+  50%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes flash3 {
+  75%,
+  100% {
+    opacity: 0;
+  }
+}

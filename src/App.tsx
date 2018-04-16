@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './App.css';
+import NextArrows from './components/ui/next-arrows/next-arrows';
 
 let logo = require('./splash.jpg');
 
@@ -12,6 +13,7 @@ class App extends React.Component {
             Sevket YALCIN
           </div>
           <img src={logo} />
+          <NextArrows/>
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.

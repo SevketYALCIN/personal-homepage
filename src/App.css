@@ -10,9 +10,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-.App-header img{
+.App-header img {
   width: 100%;
   filter: blur(2px);
   position: absolute;
@@ -21,7 +22,7 @@
   z-index: 1;
 }
 
-.App-header-name{
+.App-header-name {
   border: 2px white solid;
   color: white;
   z-index: 2;
