@@ -4,20 +4,23 @@ import { Link } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
 
 let logo = require('./splash.jpg');
+let profil = require('./profile.jpg');
 
 class App extends React.Component {
   introRef: HTMLDivElement;
-
-  goToIntro = () => {
-      window.scrollTo(0, this.introRef.offsetTop - 1);
-  }
+  xpRef: HTMLDivElement;
+  introText: string = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus,
+  est id accumsan feugiat, lacus nisl lobortis ipsum, id tristique turpis turpis et orci.`;
+  introDescription: string = `Suspendisse
+  cursus eros vitae gravida molestie. Quisque bibendum, urna sed luctus tempus, metus purus bibendum
+  nibh, vitae aliquet odio libero nec velit.`;
 
   render() {
     return (
       <div className="app">
         <header className="app-header">
           <div className="app-header-name">
-            <div className="name">Sevket YALCIN</div>
+            <h1 className="name">Sevket YALCIN</h1>
             <div className="job">Developpeur Web</div>
           </div>
           <img src={logo} />
@@ -26,7 +29,23 @@ class App extends React.Component {
           </Link>
         </header>
         <div id="app-intro" className="app-intro" ref={(input: HTMLDivElement) => { this.introRef = input; }}>
-          To get started, edit <code>src/App.tsx</code> and save to reload.
+          <h2 className="intro-title">À propos de moi</h2>
+          <div className="intro-text-container">
+            <div className="intro-text">
+              <span>
+                {this.introText} <br /><br />
+                {this.introDescription} <br /><br />
+                {this.introDescription}
+              </span>
+              <img src={profil}/>
+            </div>
+          </div>
+          <Link to="app-xp" spy={true} smooth={true} duration={1000} className="arrow-container">
+            <NextArrows />
+          </Link>
+        </div>
+        <div id="app-xp" className="app-xp" ref={(input: HTMLDivElement) => { this.xpRef = input; }}>
+          sampleTExt
         </div>
       </div>
     );
