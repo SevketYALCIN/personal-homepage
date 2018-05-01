@@ -28,7 +28,7 @@ class App extends React.Component {
             <NextArrows />
           </Link>
         </header>
-        <div id="app-intro" className="app-intro" ref={(input: HTMLDivElement) => { this.introRef = input; }}>
+        <section id="app-intro" className="app-intro" ref={(input: HTMLDivElement) => { this.introRef = input; }}>
           <h2 className="intro-title">À propos de moi</h2>
           <div className="intro-text-container">
             <div className="intro-text">
@@ -43,10 +43,13 @@ class App extends React.Component {
           <Link to="app-xp" spy={true} smooth={true} duration={1000} className="arrow-container">
             <NextArrows />
           </Link>
-        </div>
-        <div id="app-xp" className="app-xp" ref={(input: HTMLDivElement) => { this.xpRef = input; }}>
-          sampleTExt
-        </div>
+        </section>
+        <section id="app-xp" className="app-xp" ref={(input: HTMLDivElement) => { this.xpRef = input; }}>
+          <h2>Connaissances</h2>
+          <div className="xp-container">
+          test
+          </div>
+        </section>
       </div>
     );
   }
