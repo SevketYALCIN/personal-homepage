@@ -1,16 +1,17 @@
+@import '../../../variables.less';
+
 .radial-progress {
-	@circle-size: 120px;
-	@circle-background: #d6dadc;
-	@circle-color: #97a71d;
-	@inset-size: 90px;
-	@inset-color: #fbfbfb;
+	@circle-size: 180px;
+	@circle-background: @light-grey;
+	@circle-color: @red;
+	@inset-size: 150px;
+	@inset-color: @white;
 	@transition-length: 1s;
-	@shadow: 6px 6px 10px rgba(0,0,0,0.2);
-	@percentage-color: #97a71d;
+	@shadow: none;
+	@percentage-color: @red;
 	@percentage-font-size: 22px;
 	@percentage-text-width: 57px;
 
-	margin: 50px;
 	width:  @circle-size;
 	height: @circle-size;
 
@@ -25,7 +26,7 @@
 		}
 		.shadow {
 			box-shadow: @shadow inset;
-		}
+		} 
 		.mask, .fill {
 			-webkit-backface-visibility: hidden;
 			transition: -webkit-transform @transition-length;
@@ -69,10 +70,8 @@
 					display:        inline-block;
 					vertical-align: top;
 					text-align:     center;
-					font-weight:    800;
 					font-size:      @percentage-font-size;
-					font-family:    "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-					color:          @percentage-color;
+					color:          @black;
 				}
 			}
 		}

@@ -136,5 +136,4 @@ export default ProgressCircle;
 
 interface ProgressCircleProps {
     percentage: number;
-    text: string;
 }

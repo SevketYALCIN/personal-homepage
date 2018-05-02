@@ -2,7 +2,7 @@ import * as React from 'react';
 import './App.css';
 import { Link } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
-import ProgressCircle from './components/ui/progress-circle/progress-circle';
+import SkillChart from './components/ui/skill-chart/skill-chart';
 
 let logo = require('./splash.jpg');
 let profil = require('./profile.jpg');
@@ -15,6 +15,8 @@ class App extends React.Component {
   introDescription: string = `Suspendisse
   cursus eros vitae gravida molestie. Quisque bibendum, urna sed luctus tempus, metus purus bibendum
   nibh, vitae aliquet odio libero nec velit.`;
+
+  skillList = ['t', 'e'];
 
   render() {
     return (
@@ -48,7 +50,7 @@ class App extends React.Component {
         <section id="app-xp" className="app-xp" ref={(input: HTMLDivElement) => { this.xpRef = input; }}>
           <h2>Connaissances</h2>
           <div className="xp-container">
-            <ProgressCircle percentage={45} text="test" />
+            <SkillChart percentage={45} title="test" skillList={this.skillList}/>
           </div>
         </section>
       </div>
