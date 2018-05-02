@@ -21,5 +21,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # css
-*.css
-*.css.map
+**/*.css
+**/*.css.map
+src/App.css
