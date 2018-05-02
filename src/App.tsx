@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 import { Link } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
+import ProgressCircle from './components/ui/progress-circle/progress-circle';
 
 let logo = require('./splash.jpg');
 let profil = require('./profile.jpg');
@@ -47,7 +48,7 @@ class App extends React.Component {
         <section id="app-xp" className="app-xp" ref={(input: HTMLDivElement) => { this.xpRef = input; }}>
           <h2>Connaissances</h2>
           <div className="xp-container">
-          test
+            <ProgressCircle percentage={45} text="test" />
           </div>
         </section>
       </div>
