@@ -83,6 +83,7 @@
 
 h2{
   font-weight: normal;
+  text-transform: uppercase;
 }
 
 section{
@@ -99,5 +100,19 @@ section{
 
 #app-xp{
   background: @white;
-  color: @red
+  color: @red;
+
+  .xp-container{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+
+    .skill-chart{
+      width: 30%;
+      
+      .radial-progress{
+        margin: auto;
+      }
+    }
+  }
 }

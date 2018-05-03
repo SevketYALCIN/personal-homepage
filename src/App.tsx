@@ -2,7 +2,7 @@ import * as React from 'react';
 import './App.css';
 import { Link } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
-import SkillChart from './components/ui/skill-chart/skill-chart';
+import SkillChart, { SkillChartProps } from './components/ui/skill-chart/skill-chart';
 
 let logo = require('./splash.jpg');
 let profil = require('./profile.jpg');
@@ -16,7 +16,38 @@ class App extends React.Component {
   cursus eros vitae gravida molestie. Quisque bibendum, urna sed luctus tempus, metus purus bibendum
   nibh, vitae aliquet odio libero nec velit.`;
 
-  skillList = ['t', 'e'];
+  skills: Array<SkillChartProps> = [
+    {
+      percentage: 70,
+      title: 'React',
+      skillList: ['React Native']
+    },
+    {
+      percentage: 75,
+      title: 'C#',
+      skillList: ['ASP.NET Core']
+    },
+    {
+      percentage: 40,
+      title: 'Angular',
+      skillList: []
+    },
+    {
+      percentage: 80,
+      title: 'SQL Server',
+      skillList: []
+    },
+    {
+      percentage: 80,
+      title: 'ALM',
+      skillList: ['VSTS / TFS', 'git', 'Agile']
+    },
+    {
+      percentage: 50,
+      title: 'Azure / AWS',
+      skillList: []
+    }
+  ];
 
   render() {
     return (
@@ -50,7 +81,16 @@ class App extends React.Component {
         <section id="app-xp" className="app-xp" ref={(input: HTMLDivElement) => { this.xpRef = input; }}>
           <h2>Connaissances</h2>
           <div className="xp-container">
-            <SkillChart percentage={45} title="test" skillList={this.skillList}/>
+            {
+              this.skills.map((item) => {
+                return <SkillChart 
+                  key={`skill-${item.title}`} 
+                  title={item.title} 
+                  percentage={item.percentage} 
+                  skillList={item.skillList}
+                />;
+              })
+            }
           </div>
         </section>
       </div>

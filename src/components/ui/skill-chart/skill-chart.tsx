@@ -24,7 +24,7 @@ class SkillChart extends React.Component<SkillChartProps> {
 
 export default SkillChart;
 
-interface SkillChartProps {
+export interface SkillChartProps {
     title: string;
     skillList: Array<string>;
     percentage: number;
