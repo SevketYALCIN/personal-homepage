@@ -53,7 +53,7 @@ class App extends React.Component {
           </div>
           <img src={logo} />
           <Link to="app-intro" spy={true} smooth={true} duration={1000} className="arrow-container">
-            <NextArrows />
+            <NextArrows darkColor={false}/>
           </Link>
         </header>
         <section id="app-intro" className="app-intro" ref={(input: HTMLDivElement) => { this.introRef = input; }}>
@@ -69,7 +69,7 @@ class App extends React.Component {
             </div>
           </div>
           <Link to="app-xp" spy={true} smooth={true} duration={1000} className="arrow-container">
-            <NextArrows />
+            <NextArrows darkColor={false}/>
           </Link>
         </section>
         <section id="app-xp" className="app-xp" ref={(input: HTMLDivElement) => { this.xpRef = input; }}>

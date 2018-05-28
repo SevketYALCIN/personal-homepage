@@ -1,10 +1,15 @@
 import * as React from 'react';
 import './next-arrows.css';
 
-class NextArrows extends React.Component {
+class NextArrows extends React.Component<NextArrowsProps> {
+  constructor(props: NextArrowsProps) {
+    super(props);
+  }
+  
   render() {
+    const containerClass = `next-arrows-container ${this.props.darkColor ? 'dark' : 'clear'}`;
     return (
-      <div className="next-arrows-container">
+      <div className={containerClass}>
         <div className="next-arrow" id="arrow3" />
         <div className="next-arrow" id="arrow2" />
         <div className="next-arrow" id="arrow1" />
@@ -14,3 +19,7 @@ class NextArrows extends React.Component {
 }
 
 export default NextArrows;
+
+interface NextArrowsProps {
+  darkColor: boolean;
+}
