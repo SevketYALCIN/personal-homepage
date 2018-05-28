@@ -4,12 +4,14 @@ import { Link } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
 import SkillChart, { SkillChartProps } from './components/ui/skill-chart/skill-chart';
 
-let logo = require('./splash.jpg');
-let profil = require('./profile.jpg');
+const logo = require('./assets/splash.jpg');
+const profil = require('./assets/profile.jpg');
+const exia = require('./assets/exia.png');
 
 class App extends React.Component {
   introRef: HTMLDivElement;
   xpRef: HTMLDivElement;
+  studiesRef: HTMLDivElement;
   introText: string = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus,
   est id accumsan feugiat, lacus nisl lobortis ipsum, id tristique turpis turpis et orci.`;
   introDescription: string = `Suspendisse
@@ -84,6 +86,23 @@ class App extends React.Component {
                 />;
               })
             }
+          </div>
+          <Link to="app-studies" spy={true} smooth={true} duration={1000} className="arrow-container">
+            <NextArrows darkColor={true}/>
+          </Link>
+        </section>
+        <section id="app-studies" className="app-studies" ref={(input: HTMLDivElement) => { this.studiesRef = input; }}>
+          <h2>Études</h2>
+          <div className="studies-container">
+            <div className="studies-header">
+              <img src={exia} id="exiaLogo"/>
+            </div>
+            <div className="studies-bloc">
+              description
+            </div>
+            <div className="studies-xp">
+              stage de fin d'études
+            </div>
           </div>
         </section>
       </div>
