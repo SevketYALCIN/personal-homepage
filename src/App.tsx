@@ -19,33 +19,27 @@ class App extends React.Component {
   skills: Array<SkillChartProps> = [
     {
       percentage: 70,
-      title: 'React',
-      skillList: ['React Native']
+      title: 'React'
     },
     {
       percentage: 75,
-      title: 'C#',
-      skillList: ['ASP.NET Core']
+      title: 'C# / ASP.NET Core'
     },
     {
       percentage: 40,
-      title: 'Angular',
-      skillList: []
+      title: 'Angular'
     },
     {
       percentage: 80,
-      title: 'SQL Server',
-      skillList: []
+      title: 'SQL'
     },
     {
       percentage: 80,
-      title: 'ALM',
-      skillList: ['VSTS / TFS', 'git', 'Agile']
+      title: 'ALM'
     },
     {
       percentage: 50,
-      title: 'Azure / AWS',
-      skillList: []
+      title: 'Azure / AWS'
     }
   ];
 
@@ -86,8 +80,7 @@ class App extends React.Component {
                 return <SkillChart 
                   key={`skill-${item.title}`} 
                   title={item.title} 
-                  percentage={item.percentage} 
-                  skillList={item.skillList}
+                  percentage={item.percentage}
                 />;
               })
             }

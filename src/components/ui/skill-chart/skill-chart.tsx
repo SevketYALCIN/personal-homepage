@@ -13,9 +13,6 @@ class SkillChart extends React.Component<SkillChartProps> {
             <ProgressCircle percentage={this.props.percentage}/>
             <div>
                 <h3>{this.props.title}</h3>
-                {this.props.skillList.map((item, i) => {
-                        return <div key={`skill${i}`}>{item}</div>;
-                })}
             </div>
         </div>
         );
@@ -26,6 +23,5 @@ export default SkillChart;
 
 export interface SkillChartProps {
     title: string;
-    skillList: Array<string>;
     percentage: number;
 }

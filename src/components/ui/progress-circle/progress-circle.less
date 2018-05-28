@@ -7,7 +7,6 @@
 	@inset-size: 120px;
 	@inset-color: @white;
 	@transition-length: 1s;
-	@shadow: none;
 	@percentage-color: @red;
 	@percentage-font-size: 22px;
 	@percentage-text-width: 57px;
@@ -18,15 +17,12 @@
 	background-color: @circle-background;
 	border-radius: 50%;
 	.circle {
-		.mask, .fill, .shadow {
+		.mask, .fill {
 			width:    @circle-size;
 			height:   @circle-size;
 			position: absolute;
 			border-radius: 50%;
 		}
-		.shadow {
-			box-shadow: @shadow inset;
-		} 
 		.mask, .fill {
 			-webkit-backface-visibility: hidden;
 			transition: -webkit-transform @transition-length;
@@ -35,7 +31,7 @@
 			border-radius: 50%;
 		}
 		.mask {
-			clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
+			clip: rect(0px, @circle-size + 1, @circle-size + 1, @circle-size/2);
 			.fill {
 				clip: rect(0px, @circle-size/2, @circle-size, 0px);
 				background-color: @circle-color;
@@ -51,7 +47,9 @@
 
 		background-color: @inset-color;
 		border-radius: 50%;
-		box-shadow: @shadow;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		.percentage {
 			height:   @percentage-font-size;
 			width:    @percentage-text-width;
