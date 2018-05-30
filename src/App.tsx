@@ -96,12 +96,22 @@ class App extends React.Component {
           <div className="studies-container">
             <div className="studies-header">
               <img src={exia} id="exiaLogo"/>
-            </div>
-            <div className="studies-bloc">
-              description
+              <div className="studies-bloc">
+                <blockquote>L’exia.CESI forme des ingénieurs professionnels de l’informatique ancrés dans le 
+                  monde de l’entreprise.<br /><br />
+                  L’école est construite autour d’un parcours en cinq ans 
+                  offrant la possibilité aux étudiants de se spécialiser en logiciels
+                  ou réseaux et télécoms.<br /><br />
+                  La pédagogie de l'exia.Cesi est basé sur la méthode d’apprentissage PBL (Problem-Based Learning).
+                  Cette pédagogie active place les étudiants dans des situations réelles d’entreprise.
+                </blockquote>
+                <a href="https://exia.cesi.fr/ecole-ingenieur-informatique"><i>
+                  Plus d'infos sur le site internet de l'exia.CESI
+                </i></a>
+              </div>
             </div>
             <div className="studies-xp">
-              stage de fin d'études
+              dates: etudes (recap) + stage de fin d'études
             </div>
           </div>
         </section>
