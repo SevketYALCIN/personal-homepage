@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "http://sevketyalcin.atwebpages.com/",
   "private": true,
   "dependencies": {
     "@types/express": "^4.11.1",

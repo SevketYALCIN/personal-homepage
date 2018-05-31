@@ -84,6 +84,7 @@
 h2 {
   font-weight: normal;
   text-transform: uppercase;
+  margin-bottom: 60px;
 }
 
 section {
@@ -101,10 +102,6 @@ section {
 #app-xp {
   background: @white;
   color: @red;
-
-  h2 {
-    margin-bottom: 50px;
-  }
 
   .xp-container {
     display: flex;
@@ -128,16 +125,17 @@ section {
     .studies-header {
       display: flex;    
       text-align: left;
+      justify-content: space-between;
 
       #exiaLogo {
-        width: 300px;
+        width: 25%;
         align-self: baseline;
       }
 
       .studies-bloc{
-        padding-left: 15px;
+        width: 70%;
 
-        a {
+        a { 
           float: right;
         }
 
@@ -148,7 +146,26 @@ section {
     }
 
     .studies-xp {
-      margin-top: 15px;
+      text-align: left;
+      margin-top: 40px;
+
+      .xp-bloc{
+        display: flex;
+
+        .xp-date{
+          width: 30%;    
+          line-height: 20px;
+        }
+
+        .xp-text{
+          width: 70%;
+        }
+      }
+
+      .xp-title{
+        font-size: 20px;
+        line-height: 20px;
+      }
     }
   }
 

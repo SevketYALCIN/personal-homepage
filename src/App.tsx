@@ -99,19 +99,30 @@ class App extends React.Component {
               <div className="studies-bloc">
                 <blockquote>L’exia.CESI forme des ingénieurs professionnels de l’informatique ancrés dans le 
                   monde de l’entreprise.<br /><br />
-                  L’école est construite autour d’un parcours en cinq ans 
-                  offrant la possibilité aux étudiants de se spécialiser en logiciels
-                  ou réseaux et télécoms.<br /><br />
                   La pédagogie de l'exia.Cesi est basé sur la méthode d’apprentissage PBL (Problem-Based Learning).
                   Cette pédagogie active place les étudiants dans des situations réelles d’entreprise.
                 </blockquote>
-                <a href="https://exia.cesi.fr/ecole-ingenieur-informatique"><i>
+                <a target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><i>
                   Plus d'infos sur le site internet de l'exia.CESI
                 </i></a>
               </div>
             </div>
             <div className="studies-xp">
-              dates: etudes (recap) + stage de fin d'études
+              <div className="xp-bloc">
+                <span className="xp-date">Sept. 2010 - Juil. 2015</span> 
+                <span className="xp-text">
+                  <div className="xp-title">Exia, dominante software development</div>
+                  <div><br />
+                    Apprentissage d'un bon nombre de languages de programmation,
+                    de base de données, de techniques de conception de systèmes 
+                    accompagné de projets d'équipe pour une mise en situation d'entreprise.<br /><br />
+                    La 5ème année était plus axée vers le management de projet (méthodologies, outils) tout en 
+                    menant un projet fil rouge (concours Nokia), un projet d'entrepreunariat (site de jeu en ligne),
+                    ainsi que la préparation de mon mémoire et de sa présentation (l'implantation de technologie 
+                    NFC chez l'humain).
+                  </div>
+                </span> 
+              </div>
             </div>
           </div>
         </section>
