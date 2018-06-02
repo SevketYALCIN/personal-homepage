@@ -81,24 +81,6 @@
   float: left;
 }
 
-h2 {
-  font-weight: normal;
-  text-transform: uppercase;
-  margin-bottom: 60px;
-}
-
-section {
-  width: 100%;
-  height: 100vh;
-  background: @grey;
-  color: @white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-}
-
 #app-xp {
   background: @white;
   color: @red;
@@ -180,6 +162,14 @@ section {
   }
 }
 
+#app-pro{
+  background: @white;
+  color: @red;
+}
+
+
+//Global stuff
+
 blockquote {
   quotes: "«\00A0" "\00A0»";
   margin: 0;
@@ -191,4 +181,22 @@ blockquote::before {
 
 blockquote::after {
   content: close-quote;
+}
+
+h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background: @grey;
+  color: @white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }

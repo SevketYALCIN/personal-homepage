@@ -12,6 +12,7 @@ class App extends React.Component {
   introRef: HTMLDivElement;
   xpRef: HTMLDivElement;
   studiesRef: HTMLDivElement;
+  proRef: HTMLDivElement;
   introText: string = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus,
   est id accumsan feugiat, lacus nisl lobortis ipsum, id tristique turpis turpis et orci.`;
   introDescription: string = `Suspendisse
@@ -124,6 +125,15 @@ class App extends React.Component {
                 </span> 
               </div>
             </div>
+          </div>
+          <Link to="app-pro" spy={true} smooth={true} duration={1000} className="arrow-container">
+            <NextArrows darkColor={false}/>
+          </Link>
+        </section>
+        <section id="app-pro" className="app-pro" ref={(input: HTMLDivElement) => { this.proRef = input; }}>
+          <h2>Expérience professionnelle</h2>
+          <div className="studies-container">
+            IS et Stage TS
           </div>
         </section>
       </div>
