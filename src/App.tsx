@@ -13,6 +13,7 @@ class App extends React.Component {
   xpRef: HTMLDivElement;
   studiesRef: HTMLDivElement;
   proRef: HTMLDivElement;
+  contactRef: HTMLDivElement;
   introText: string = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus,
   est id accumsan feugiat, lacus nisl lobortis ipsum, id tristique turpis turpis et orci.`;
   introDescription: string = `Suspendisse
@@ -134,6 +135,15 @@ class App extends React.Component {
           <h2>Expérience professionnelle</h2>
           <div className="studies-container">
             IS et Stage TS
+          </div>
+          <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container">
+            <NextArrows darkColor={true}/>
+          </Link>
+        </section>
+        <section id="app-contact" className="app-contact" ref={(input: HTMLDivElement) => { this.contactRef = input; }}>
+          <h2>Contact</h2>
+          <div className="contact-container">
+            Contact info phrase
           </div>
         </section>
       </div>
