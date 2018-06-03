@@ -133,8 +133,25 @@ class App extends React.Component {
         </section>
         <section id="app-pro" className="app-pro" ref={(input: HTMLDivElement) => { this.proRef = input; }}>
           <h2>Expérience professionnelle</h2>
-          <div className="studies-container">
-            IS et Stage TS
+          <div className="pro-container">
+            <div className="pro-bloc">
+              <span className="pro-date">Janv. 2018 - Janv. 2019</span> 
+              <span className="pro-text">
+                Forcia
+              </span>
+            </div>
+            <div className="pro-bloc">
+              <span className="pro-date">Sept. 2015 - Janv. 2018</span> 
+              <span className="pro-text">
+                IS
+              </span>
+            </div>
+            <div className="pro-bloc">
+              <span className="pro-date">Janv. 2015 - Juil. 2015</span> 
+              <span className="pro-text">
+                Stage
+              </span>
+            </div>
           </div>
           <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container">
             <NextArrows darkColor={true}/>
