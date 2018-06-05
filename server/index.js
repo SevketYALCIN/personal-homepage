@@ -4,6 +4,9 @@ import serverRenderer from './middleware/renderer';
 
 const PORT = 3000;
 const path = require('path');
+const sgMail = require('@sendgrid/mail');
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // initialize the application and create the routes
 const app = express();
@@ -19,6 +22,20 @@ router.use(express.static(
 ));
 
 router.use('*', serverRenderer);
+
+// add contact form mailing route
+app.post('/contact', function (req, res) {
+        const msg = {
+          to: 'sevket.yalcin@outlook.com',
+          from: 'contact@sevketyalcin.com',
+          subject: 'Test',
+          text: 'Test',
+        };
+
+        sgMail.send(msg).then((t) => {
+            res.json({"status": t});
+        });
+})
 
 // tell the app to use the above rules
 app.use(router);
