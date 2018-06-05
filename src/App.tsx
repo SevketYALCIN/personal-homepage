@@ -8,18 +8,19 @@ const logo = require('./assets/splash.jpg');
 const profil = require('./assets/profile.jpg');
 const exia = require('./assets/exia.png');
 
-class App extends React.Component {
+class App extends React.Component<AppProps, AppState> {
   introRef: HTMLDivElement;
   xpRef: HTMLDivElement;
   studiesRef: HTMLDivElement;
   proRef: HTMLDivElement;
   contactRef: HTMLDivElement;
+  headerRef: HTMLDivElement;
+  appRef: HTMLDivElement;
   introText: string = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus,
   est id accumsan feugiat, lacus nisl lobortis ipsum, id tristique turpis turpis et orci.`;
   introDescription: string = `Suspendisse
   cursus eros vitae gravida molestie. Quisque bibendum, urna sed luctus tempus, metus purus bibendum
   nibh, vitae aliquet odio libero nec velit.`;
-
   skills: Array<SkillChartProps> = [
     {
       percentage: 70,
@@ -47,10 +48,36 @@ class App extends React.Component {
     }
   ];
 
+  constructor(props: AppProps) {
+    super(props);
+    this.state = {
+      navbar: false
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      if (document.documentElement.scrollTop >= this.headerRef.clientHeight) {
+        this.setState({navbar: true});
+      } else {
+        this.setState({navbar: false});
+      }
+    // tslint:disable-next-line:align
+    }, true);
+  }
+
   render() {
     return (
-      <div className="app">
-        <header className="app-header">
+      <div className="app" ref={(input: HTMLDivElement) => { this.appRef = input; }}>
+        <div className={`app-navbar ${this.state.navbar ? 'is-active' : ''} `}>
+          <Link to="app-header" spy={true} smooth={true} duration={1000}>
+            Home
+          </Link>
+          <Link to="app-intro" spy={true} smooth={true} duration={1000}>
+            Intro
+          </Link>
+        </div>
+        <div className="app-header" id="app-header" ref={(input: HTMLDivElement) => { this.headerRef = input; }}>
           <div className="app-header-name">
             <h1 className="name">Sevket YALCIN</h1>
             <div className="job">Developpeur Web</div>
@@ -59,7 +86,7 @@ class App extends React.Component {
           <Link to="app-intro" spy={true} smooth={true} duration={1000} className="arrow-container">
             <NextArrows darkColor={false}/>
           </Link>
-        </header>
+        </div>
         <section id="app-intro" className="app-intro" ref={(input: HTMLDivElement) => { this.introRef = input; }}>
           <h2 className="intro-title">À propos de moi</h2>
           <div className="intro-text-container">
@@ -169,3 +196,11 @@ class App extends React.Component {
 }
 
 export default App;
+
+interface AppProps {
+  isMobile: boolean;
+}
+
+interface AppState {
+  navbar: boolean;
+}
