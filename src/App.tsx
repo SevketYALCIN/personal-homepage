@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import { Link } from 'react-scroll';
+import { Link, scrollSpy } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
 import SkillChart, { SkillChartProps } from './components/ui/skill-chart/skill-chart';
 
@@ -64,6 +64,8 @@ class App extends React.Component<AppProps, AppState> {
       }
     // tslint:disable-next-line:align
     }, true);
+  
+    scrollSpy.update();
   }
 
   render() {
@@ -76,27 +78,27 @@ class App extends React.Component<AppProps, AppState> {
                     Home
                 </div>
               </Link>
-              <Link to="app-intro-anchor" spy={true} smooth={true} duration={1000}>
+              <Link to="app-intro" spy={true} smooth={true} duration={1000}offset={48} isDynamic={true}>
                 <div className="nav-tab">
                     Intro
                 </div>
               </Link>
-              <Link to="app-xp-anchor" spy={true} smooth={true} duration={1000}>
+              <Link to="app-xp" spy={true} smooth={true} duration={1000}offset={48}>
                 <div className="nav-tab">
                     Connaissances
                 </div>
               </Link>
-              <Link to="app-studies-anchor" spy={true} smooth={true} duration={1000}>
+              <Link to="app-studies" spy={true} smooth={true} duration={1000}offset={48}>
                 <div className="nav-tab">
                     Études
                 </div>
               </Link>
-              <Link to="app-pro-anchor" spy={true} smooth={true} duration={1000}>
+              <Link to="app-pro" spy={true} smooth={true} duration={1000}offset={48}>
                 <div className="nav-tab">
                     Expérience
                 </div>
               </Link>
-              <Link to="app-contact-anchor" spy={true} smooth={true} duration={1000}>
+              <Link to="app-contact" spy={true} smooth={true} duration={1000}offset={48}>
                 <div className="nav-tab">
                     Contact
                 </div>
@@ -109,12 +111,11 @@ class App extends React.Component<AppProps, AppState> {
             <div className="job">Developpeur Web</div>
           </div>
           <img src={logo} />
-          <Link to="app-intro-anchor" spy={true} smooth={true} duration={1000} className="arrow-container">
+          <Link to="app-intro" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48} isDynamic={true}>
             <NextArrows darkColor={false}/>
           </Link>
         </div>
         <section id="app-intro" className="app-intro" ref={(input: HTMLDivElement) => { this.introRef = input; }}>
-          <div className="app-intro-anchor anchor"/>
           <h2 className="intro-title">À propos de moi</h2>
           <div className="intro-text-container">
             <div className="intro-text">
@@ -126,12 +127,11 @@ class App extends React.Component<AppProps, AppState> {
               <img src={profil}/>
             </div>
           </div>
-          <Link to="app-xp-anchor" spy={true} smooth={true} duration={1000} className="arrow-container">
+          <Link to="app-xp" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48}>
             <NextArrows darkColor={false}/>
           </Link>
         </section>
         <section id="app-xp" className="app-xp" ref={(input: HTMLDivElement) => { this.xpRef = input; }}>
-          <div className="app-xp-anchor anchor"/>
           <h2>Connaissances</h2>
           <div className="xp-container">
             {
@@ -144,12 +144,11 @@ class App extends React.Component<AppProps, AppState> {
               })
             }
           </div>
-          <Link to="app-studies-anchor" spy={true} smooth={true} duration={1000} className="arrow-container">
+          <Link to="app-studies" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48}>
             <NextArrows darkColor={true}/>
           </Link>
         </section>
         <section id="app-studies" className="app-studies" ref={(input: HTMLDivElement) => { this.studiesRef = input; }}>
-          <div className="app-studies-anchor anchor"/>
           <h2>Études</h2>
           <div className="studies-container">
             <div className="studies-header">
@@ -183,12 +182,11 @@ class App extends React.Component<AppProps, AppState> {
               </div>
             </div>
           </div>
-          <Link to="app-pro-anchor" spy={true} smooth={true} duration={1000} className="arrow-container">
+          <Link to="app-pro" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48}>
             <NextArrows darkColor={false}/>
           </Link>
         </section>
         <section id="app-pro" className="app-pro" ref={(input: HTMLDivElement) => { this.proRef = input; }}>
-          <div className="app-pro-anchor anchor"/>
           <h2>Expérience professionnelle</h2>
           <div className="pro-container">
             <div className="pro-bloc">
@@ -210,12 +208,11 @@ class App extends React.Component<AppProps, AppState> {
               </span>
             </div>
           </div>
-          <Link to="app-contact-anchor" spy={true} smooth={true} duration={1000} className="arrow-container">
+          <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48}>
             <NextArrows darkColor={true}/>
           </Link>
         </section>
         <section id="app-contact" className="app-contact" ref={(input: HTMLDivElement) => { this.contactRef = input; }}>
-          <div className="app-contact-anchor anchor"/>
           <h2>Contact</h2>
           <div className="contact-container">
             Contact info phrase

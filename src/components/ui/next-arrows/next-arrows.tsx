@@ -12,7 +12,7 @@ class NextArrows extends React.Component<NextArrowsProps> {
       <div className={containerClass}>
         <div className="next-arrow" id="arrow3" />
         <div className="next-arrow" id="arrow2" />
-        <div className="next-arrow" id="arrow1" />
+        {/* <div className="next-arrow" id="arrow1" /> */}
       </div>
     );
   }

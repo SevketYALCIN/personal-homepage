@@ -201,9 +201,19 @@
   .nav-tab-container{    
     display: flex;
     .nav-tab{
-      width: 100px;
+      width: 140px;
       padding: 15px; 
       cursor: pointer;
+    }
+
+    a {
+      &:hover{
+        background-color: rgba(255,255,255,.1);
+      }
+
+      &.active .nav-tab {
+      background: #1f9aae;
+      }
     }
   }
 }
@@ -230,7 +240,7 @@ h2 {
 }
 
 section {
-  height: calc(~"100vh + 10px");
+  height: calc(~"100vh + 60px");
   width: 100%;
   background: @grey;
   color: @white;
@@ -239,12 +249,4 @@ section {
   align-items: center;
   flex-direction: column;
   position: relative;
-}
-
-.anchor{
-  position: absolute;
-  top: 5px;
-  bottom: 5px;
-  left: 0;
-  right: 0;
 }
