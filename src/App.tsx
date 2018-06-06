@@ -51,8 +51,39 @@ class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
     this.state = {
-      navbar: false
+      navbar: false,
+      contactBody: '',
+      contactMail: '',
+      contactName: '',
+      contactSubject: ''
     };
+  }
+
+  handleInputChange = (event: MyFormEvent<HTMLElement>) => {
+    const target = event.target;
+    let value = '';
+    let name = '';
+    if (target) {
+      value = target.value;
+      name = target.name;
+    }
+
+    switch (name) {
+      case 'contactMail':
+        this.setState((current) => ({ ...current, contactMail: value }));
+        break;
+      case 'contactName':
+        this.setState((current) => ({ ...current, contactName: value }));
+        break;
+      case 'contactBody':
+        this.setState((current) => ({ ...current, contactBody: value }));
+        break;
+      case 'contactSubject':
+        this.setState((current) => ({ ...current, contactSubject: value }));
+        break;
+      default:
+        break;
+    }
   }
 
   componentDidMount() {
@@ -215,7 +246,22 @@ class App extends React.Component<AppProps, AppState> {
         <section id="app-contact" className="app-contact" ref={(input: HTMLDivElement) => { this.contactRef = input; }}>
           <h2>Contact</h2>
           <div className="contact-container">
-            Contact info phrase
+            <p>
+              <label>Name</label><br />
+              <input type="text" value={this.state.contactName} id="contactName" name="contactName" onChange={this.handleInputChange}/>
+            </p>
+            <p>
+              <label>Mail</label><br />
+              <input type="text" value={this.state.contactMail} id="contactMail" name="contactMail" onChange={this.handleInputChange}/>
+            </p>
+            <p>
+              <label>Subject</label><br />
+              <input type="text" value={this.state.contactSubject} id="contactSubject" name="contactSubject" onChange={this.handleInputChange}/>
+            </p>
+            <p>
+              <label>Message</label><br />
+              <textarea value={this.state.contactBody} id="contactBody" name="contactBody" onChange={this.handleInputChange}/>
+            </p>
           </div>
         </section>
       </div>
@@ -231,4 +277,17 @@ interface AppProps {
 
 interface AppState {
   navbar: boolean;
+  contactName: string;
+  contactMail: string;
+  contactSubject: string;
+  contactBody: string;
+}
+
+interface MyEventTarget extends EventTarget {
+  value: string;
+  name: string;
+}
+
+interface MyFormEvent<T> extends React.FormEvent<T> {
+  target: MyEventTarget;
 }
