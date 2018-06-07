@@ -247,20 +247,23 @@ class App extends React.Component<AppProps, AppState> {
           <h2>Contact</h2>
           <div className="contact-container">
             <p>
-              <label>Name</label><br />
+              <label>Nom</label><br />
               <input type="text" value={this.state.contactName} id="contactName" name="contactName" onChange={this.handleInputChange}/>
             </p>
             <p>
-              <label>Mail</label><br />
+              <label>E-Mail</label><br />
               <input type="text" value={this.state.contactMail} id="contactMail" name="contactMail" onChange={this.handleInputChange}/>
             </p>
             <p>
-              <label>Subject</label><br />
+              <label>Sujet</label><br />
               <input type="text" value={this.state.contactSubject} id="contactSubject" name="contactSubject" onChange={this.handleInputChange}/>
             </p>
             <p>
               <label>Message</label><br />
-              <textarea value={this.state.contactBody} id="contactBody" name="contactBody" onChange={this.handleInputChange}/>
+              <textarea rows={10} value={this.state.contactBody} id="contactBody" name="contactBody" onChange={this.handleInputChange}/>
+            </p>
+            <p>
+              <button>Envoyer</button>
             </p>
           </div>
         </section>
