@@ -109,9 +109,12 @@
       text-align: left;
       justify-content: space-between;
 
-      #exiaLogo {
+      a {
         width: 25%;
-        align-self: baseline;
+        #exiaLogo {
+          width: 100%;
+          align-self: baseline;
+        }
       }
 
       .studies-bloc {
@@ -155,9 +158,8 @@
     color: white;
     text-decoration: none;
 
-    &:hover {
-      color: rgba(255, 255, 255, 0.61);
-      text-decoration: underline;
+    &:hover i {
+      opacity: 0.7;
     }
   }
 }

@@ -183,7 +183,7 @@ class App extends React.Component<AppProps, AppState> {
           <h2>Études</h2>
           <div className="studies-container">
             <div className="studies-header">
-              <img src={exia} id="exiaLogo"/>
+              <a target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><img src={exia} id="exiaLogo"/></a>
               <div className="studies-bloc">
                 <blockquote>L’exia.CESI forme des ingénieurs professionnels de l’informatique ancrés dans le 
                   monde de l’entreprise.<br /><br />
