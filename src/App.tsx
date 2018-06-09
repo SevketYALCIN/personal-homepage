@@ -109,27 +109,27 @@ class App extends React.Component<AppProps, AppState> {
                     Home
                 </div>
               </Link>
-              <Link to="app-intro" spy={true} smooth={true} duration={1000}offset={48} isDynamic={true}>
+              <Link to="app-intro" spy={true} smooth={true} duration={1000}  isDynamic={true}>
                 <div className="nav-tab">
                     Intro
                 </div>
               </Link>
-              <Link to="app-xp" spy={true} smooth={true} duration={1000}offset={48}>
+              <Link to="app-xp" spy={true} smooth={true} duration={1000} >
                 <div className="nav-tab">
                     Connaissances
                 </div>
               </Link>
-              <Link to="app-studies" spy={true} smooth={true} duration={1000}offset={48}>
+              <Link to="app-studies" spy={true} smooth={true} duration={1000} >
                 <div className="nav-tab">
                     Études
                 </div>
               </Link>
-              <Link to="app-pro" spy={true} smooth={true} duration={1000}offset={48}>
+              <Link to="app-pro" spy={true} smooth={true} duration={1000} >
                 <div className="nav-tab">
                     Expérience
                 </div>
               </Link>
-              <Link to="app-contact" spy={true} smooth={true} duration={1000}offset={48}>
+              <Link to="app-contact" spy={true} smooth={true} duration={1000} >
                 <div className="nav-tab">
                     Contact
                 </div>
@@ -142,7 +142,7 @@ class App extends React.Component<AppProps, AppState> {
             <div className="job">Developpeur Web</div>
           </div>
           <img src={logo} />
-          <Link to="app-intro" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48} isDynamic={true}>
+          <Link to="app-intro" spy={true} smooth={true} duration={1000} className="arrow-container"  isDynamic={true}>
             <NextArrows darkColor={false}/>
           </Link>
         </div>
@@ -158,7 +158,7 @@ class App extends React.Component<AppProps, AppState> {
               <img src={profil}/>
             </div>
           </div>
-          <Link to="app-xp" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48}>
+          <Link to="app-xp" spy={true} smooth={true} duration={1000} className="arrow-container" >
             <NextArrows darkColor={false}/>
           </Link>
         </section>
@@ -175,7 +175,7 @@ class App extends React.Component<AppProps, AppState> {
               })
             }
           </div>
-          <Link to="app-studies" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48}>
+          <Link to="app-studies" spy={true} smooth={true} duration={1000} className="arrow-container" >
             <NextArrows darkColor={true}/>
           </Link>
         </section>
@@ -213,7 +213,7 @@ class App extends React.Component<AppProps, AppState> {
               </div>
             </div>
           </div>
-          <Link to="app-pro" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48}>
+          <Link to="app-pro" spy={true} smooth={true} duration={1000} className="arrow-container" >
             <NextArrows darkColor={false}/>
           </Link>
         </section>
@@ -239,32 +239,35 @@ class App extends React.Component<AppProps, AppState> {
               </span>
             </div>
           </div>
-          <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container"offset={48}>
+          <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container" >
             <NextArrows darkColor={true}/>
           </Link>
         </section>
         <section id="app-contact" className="app-contact" ref={(input: HTMLDivElement) => { this.contactRef = input; }}>
-          <h2>Contact</h2>
-          <div className="contact-container">
-            <p>
-              <label>Nom</label><br />
-              <input type="text" value={this.state.contactName} id="contactName" name="contactName" onChange={this.handleInputChange}/>
-            </p>
-            <p>
-              <label>E-Mail</label><br />
-              <input type="text" value={this.state.contactMail} id="contactMail" name="contactMail" onChange={this.handleInputChange}/>
-            </p>
-            <p>
-              <label>Sujet</label><br />
-              <input type="text" value={this.state.contactSubject} id="contactSubject" name="contactSubject" onChange={this.handleInputChange}/>
-            </p>
-            <p>
-              <label>Message</label><br />
-              <textarea rows={10} value={this.state.contactBody} id="contactBody" name="contactBody" onChange={this.handleInputChange}/>
-            </p>
-            <p>
-              <button>Envoyer</button>
-            </p>
+          <div className="navbar-placeholder" />
+          <div className="section-container">
+            <h2>Contact</h2>
+            <div className="contact-container">
+              <p>
+                <label>Nom</label><br />
+                <input type="text" value={this.state.contactName} id="contactName" name="contactName" onChange={this.handleInputChange}/>
+              </p>
+              <p>
+                <label>E-Mail</label><br />
+                <input type="text" value={this.state.contactMail} id="contactMail" name="contactMail" onChange={this.handleInputChange}/>
+              </p>
+              <p>
+                <label>Sujet</label><br />
+                <input type="text" value={this.state.contactSubject} id="contactSubject" name="contactSubject" onChange={this.handleInputChange}/>
+              </p>
+              <p>
+                <label>Message</label><br />
+                <textarea rows={10} value={this.state.contactBody} id="contactBody" name="contactBody" onChange={this.handleInputChange}/>
+              </p>
+              <p>
+                <button>Envoyer</button>
+              </p>
+            </div>
           </div>
         </section>
       </div>
