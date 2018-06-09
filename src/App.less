@@ -56,7 +56,7 @@
   text-transform: uppercase;
 }
 
-.intro-text-container {
+.app-intro .section-body {
   margin: 0 auto;
   width: 50%;
 }
@@ -85,7 +85,7 @@
   background: @white;
   color: @red;
 
-  .xp-container {
+  .section-body {
     display: flex;
     flex-flow: wrap;
     justify-content: space-evenly;
@@ -101,7 +101,7 @@
 }
 
 #app-studies {
-  .studies-container {
+  .section-container {
     width: 60%;
 
     .studies-header {
@@ -168,9 +168,13 @@
   background: @white;
   color: @red;
 
-  .pro-container {
+  .section-container {
     width: 60%;
     text-align: left;
+
+    .section-body{
+      width: 100%;
+    }
 
     .pro-bloc {
       display: flex;
@@ -221,7 +225,7 @@
 }
 
 #app-contact{
-  .contact-container{
+  .section-body{
     p {
       text-align: left;
     }
@@ -254,6 +258,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: calc(~"100vh + 60px");
   width: 100%;
   background: @grey;
@@ -310,6 +315,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: calc(~"100% - 50px");
+  height: calc(~"100% - 100px");
+  margin: 50px 0;
   width: 100%;
 }

@@ -3,6 +3,7 @@ import './App.css';
 import { Link, scrollSpy } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
 import SkillChart, { SkillChartProps } from './components/ui/skill-chart/skill-chart';
+import SectionBlock from './components/section-block/section-block';
 
 const logo = require('./assets/splash.jpg');
 const profil = require('./assets/profile.jpg');
@@ -146,25 +147,20 @@ class App extends React.Component<AppProps, AppState> {
             <NextArrows darkColor={false}/>
           </Link>
         </div>
-        <section id="app-intro" className="app-intro" ref={(input: HTMLDivElement) => { this.introRef = input; }}>
-          <h2 className="intro-title">À propos de moi</h2>
-          <div className="intro-text-container">
-            <div className="intro-text">
-              <span>
-                {this.introText} <br /><br />
-                {this.introDescription} <br /><br />
-                {this.introDescription}
-              </span>
-              <img src={profil}/>
-            </div>
+        <SectionBlock name="app-intro" title="À propos de moi">
+          <div className="intro-text">
+            <span>
+              {this.introText} <br /><br />
+              {this.introDescription} <br /><br />
+              {this.introDescription}
+            </span>
+            <img src={profil}/>
           </div>
           <Link to="app-xp" spy={true} smooth={true} duration={1000} className="arrow-container" >
             <NextArrows darkColor={false}/>
           </Link>
-        </section>
-        <section id="app-xp" className="app-xp" ref={(input: HTMLDivElement) => { this.xpRef = input; }}>
-          <h2>Connaissances</h2>
-          <div className="xp-container">
+        </SectionBlock>
+        <SectionBlock name="app-xp" title="Connaissances">
             {
               this.skills.map((item) => {
                 return <SkillChart 
@@ -174,14 +170,11 @@ class App extends React.Component<AppProps, AppState> {
                 />;
               })
             }
-          </div>
           <Link to="app-studies" spy={true} smooth={true} duration={1000} className="arrow-container" >
             <NextArrows darkColor={true}/>
           </Link>
-        </section>
-        <section id="app-studies" className="app-studies" ref={(input: HTMLDivElement) => { this.studiesRef = input; }}>
-          <h2>Études</h2>
-          <div className="studies-container">
+        </SectionBlock>
+        <SectionBlock name="app-studies" title="Études">
             <div className="studies-header">
               <a target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><img src={exia} id="exiaLogo"/></a>
               <div className="studies-bloc">
@@ -212,14 +205,11 @@ class App extends React.Component<AppProps, AppState> {
                 </span> 
               </div>
             </div>
-          </div>
           <Link to="app-pro" spy={true} smooth={true} duration={1000} className="arrow-container" >
             <NextArrows darkColor={false}/>
           </Link>
-        </section>
-        <section id="app-pro" className="app-pro" ref={(input: HTMLDivElement) => { this.proRef = input; }}>
-          <h2>Expérience professionnelle</h2>
-          <div className="pro-container">
+        </SectionBlock>
+        <SectionBlock name="app-pro" title="Expérience professionnelle">
             <div className="pro-bloc">
               <span className="pro-date">Janv. 2018 - Janv. 2019</span> 
               <span className="pro-text">
@@ -238,38 +228,31 @@ class App extends React.Component<AppProps, AppState> {
                 Stage
               </span>
             </div>
-          </div>
-          <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container" >
-            <NextArrows darkColor={true}/>
-          </Link>
-        </section>
-        <section id="app-contact" className="app-contact" ref={(input: HTMLDivElement) => { this.contactRef = input; }}>
-          <div className="navbar-placeholder" />
-          <div className="section-container">
-            <h2>Contact</h2>
-            <div className="contact-container">
-              <p>
-                <label>Nom</label><br />
-                <input type="text" value={this.state.contactName} id="contactName" name="contactName" onChange={this.handleInputChange}/>
-              </p>
-              <p>
-                <label>E-Mail</label><br />
-                <input type="text" value={this.state.contactMail} id="contactMail" name="contactMail" onChange={this.handleInputChange}/>
-              </p>
-              <p>
-                <label>Sujet</label><br />
-                <input type="text" value={this.state.contactSubject} id="contactSubject" name="contactSubject" onChange={this.handleInputChange}/>
-              </p>
-              <p>
-                <label>Message</label><br />
-                <textarea rows={10} value={this.state.contactBody} id="contactBody" name="contactBody" onChange={this.handleInputChange}/>
-              </p>
-              <p>
-                <button>Envoyer</button>
-              </p>
-            </div>
-          </div>
-        </section>
+            <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container">
+              <NextArrows darkColor={true}/>
+            </Link>
+        </SectionBlock>
+        <SectionBlock name="app-contact" title="Contact">
+          <p>
+            <label>Nom</label><br />
+            <input type="text" value={this.state.contactName} id="contactName" name="contactName" onChange={this.handleInputChange}/>
+          </p>
+          <p>
+            <label>E-Mail</label><br />
+            <input type="text" value={this.state.contactMail} id="contactMail" name="contactMail" onChange={this.handleInputChange}/>
+          </p>
+          <p>
+            <label>Sujet</label><br />
+            <input type="text" value={this.state.contactSubject} id="contactSubject" name="contactSubject" onChange={this.handleInputChange}/>
+          </p>
+          <p>
+            <label>Message</label><br />
+            <textarea rows={10} value={this.state.contactBody} id="contactBody" name="contactBody" onChange={this.handleInputChange}/>
+          </p>
+          <p>
+            <button>Envoyer</button>
+          </p>
+        </SectionBlock>
       </div>
     );
   }
