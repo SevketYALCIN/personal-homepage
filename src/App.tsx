@@ -4,13 +4,18 @@ import { Link, scrollSpy } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
 import SkillChart, { SkillChartProps } from './components/ui/skill-chart/skill-chart';
 import SectionBlock from './components/section-block/section-block';
-// import RessourcesFr from './ressources/ressources.fr';
+import RessourcesFr from './ressources/ressources.fr';
 import RessourcesEn from './ressources/ressources.en';
 import Ressource from './ressources/ressource';
 
 const logo = require('./assets/splash.jpg');
 const profil = require('./assets/profile.jpg');
 const exia = require('./assets/exia.png');
+
+enum Lang {
+  English,
+  French
+}
 
 class App extends React.Component<AppProps, AppState> {
   introRef: HTMLDivElement;
@@ -55,7 +60,8 @@ class App extends React.Component<AppProps, AppState> {
       contactMail: '',
       contactName: '',
       contactSubject: '',
-      ressource: RessourcesEn
+      ressource: RessourcesEn,
+      lang: Lang.English
     };
   }
 
@@ -86,12 +92,21 @@ class App extends React.Component<AppProps, AppState> {
     }
   }
 
+  changeLang = (language: Lang) => {
+    if (language !== this.state.lang) {
+      this.setState((current) => ({ 
+        ...current, 
+        lang: language, 
+        ressource: language === Lang.English ? RessourcesEn : RessourcesFr }));
+    }
+  }
+
   componentDidMount() {
     window.addEventListener('scroll', () => {
       if (document.documentElement.scrollTop >= this.headerRef.clientHeight) {
-        this.setState({navbar: true});
+        this.setState((current) => ({ ...current, navbar: true }));
       } else {
-        this.setState({navbar: false});
+        this.setState((current) => ({ ...current, navbar: false }));
       }
     // tslint:disable-next-line:align
     }, true);
@@ -135,6 +150,21 @@ class App extends React.Component<AppProps, AppState> {
                 </div>
               </Link>
           </div>
+          <div className="lang-container">
+            <span 
+              onClick={() => this.changeLang(Lang.English)} 
+              className={this.state.lang === Lang.English ? 'is-active' : ''}
+            >
+              EN
+            </span>
+            <div className="separator">|</div>
+            <span 
+              onClick={() => this.changeLang(Lang.French)}
+              className={this.state.lang === Lang.French ? 'is-active' : ''}
+            >
+              FR
+            </span>
+          </div>
         </div>
         <div className="app-header" id="app-header" ref={(input: HTMLDivElement) => { this.headerRef = input; }}>
           <div className="app-header-name">
@@ -142,15 +172,28 @@ class App extends React.Component<AppProps, AppState> {
             <div className="job">{this.state.ressource.jobName}</div>
           </div>
           <img src={logo} />
+          <div className="lang-container">
+            <span 
+              onClick={() => this.changeLang(Lang.English)} 
+              className={this.state.lang === Lang.English ? 'is-active' : ''}
+            >
+              EN
+            </span>
+            <div className="separator">|</div>
+            <span 
+              onClick={() => this.changeLang(Lang.French)}
+              className={this.state.lang === Lang.French ? 'is-active' : ''}
+            >
+              FR
+            </span>
+          </div>
           <Link to="app-intro" spy={true} smooth={true} duration={1000} className="arrow-container"  isDynamic={true}>
             <NextArrows darkColor={false}/>
           </Link>
         </div>
         <SectionBlock name="app-intro" title={this.state.ressource.introTitle}>
           <div className="intro-text">
-            <span>
-              {this.state.ressource.introBody}
-            </span>
+            <span dangerouslySetInnerHTML={{__html: this.state.ressource.introBody}} />
             <img src={profil}/>
           </div>
           <Link to="app-xp" spy={true} smooth={true} duration={1000} className="arrow-container" >
@@ -175,7 +218,7 @@ class App extends React.Component<AppProps, AppState> {
             <div className="studies-header">
               <a target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><img src={exia} id="exiaLogo"/></a>
               <div className="studies-bloc">
-                <blockquote>{this.state.ressource.studiesSchoolBody}</blockquote>
+                <blockquote dangerouslySetInnerHTML={{__html: this.state.ressource.studiesSchoolBody}} />
                 <a target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><i>
                   {this.state.ressource.studiesMoreInfo}
                 </i></a>
@@ -187,7 +230,7 @@ class App extends React.Component<AppProps, AppState> {
                 <span className="xp-text">
                   <div className="xp-title">{this.state.ressource.studiesMajor}</div>
                   <div><br />
-                    {this.state.ressource.studiesBody}
+                    <span dangerouslySetInnerHTML={{__html: this.state.ressource.studiesBody}} />
                   </div>
                 </span> 
               </div>
@@ -199,21 +242,15 @@ class App extends React.Component<AppProps, AppState> {
         <SectionBlock name="app-pro" title={this.state.ressource.xpTitle}>
             <div className="pro-bloc">
               <span className="pro-date">Janv. 2018 - Janv. 2019</span> 
-              <span className="pro-text">
-                {this.state.ressource.xpForcia}
-              </span>
+              <span className="pro-text" dangerouslySetInnerHTML={{__html: this.state.ressource.xpForcia}} />
             </div>
             <div className="pro-bloc">
               <span className="pro-date">Sept. 2015 - Janv. 2018</span> 
-              <span className="pro-text">
-              {this.state.ressource.xpIS}
-              </span>
+              <span className="pro-text" dangerouslySetInnerHTML={{__html: this.state.ressource.xpIS}} />
             </div>
             <div className="pro-bloc">
               <span className="pro-date">Janv. 2015 - Juil. 2015</span> 
-              <span className="pro-text">
-              {this.state.ressource.xpStage}
-              </span>
+              <span className="pro-text" dangerouslySetInnerHTML={{__html: this.state.ressource.xpStage}} />
             </div>
             <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container">
               <NextArrows darkColor={true}/>
@@ -258,6 +295,7 @@ interface AppState {
   contactSubject: string;
   contactBody: string;
   ressource: Ressource;
+  lang: Lang;
 }
 
 interface MyEventTarget extends EventTarget {
