@@ -4,6 +4,9 @@ import { Link, scrollSpy } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
 import SkillChart, { SkillChartProps } from './components/ui/skill-chart/skill-chart';
 import SectionBlock from './components/section-block/section-block';
+// import RessourcesFr from './ressources/ressources.fr';
+import RessourcesEn from './ressources/ressources.en';
+import Ressource from './ressources/ressource';
 
 const logo = require('./assets/splash.jpg');
 const profil = require('./assets/profile.jpg');
@@ -17,11 +20,6 @@ class App extends React.Component<AppProps, AppState> {
   contactRef: HTMLDivElement;
   headerRef: HTMLDivElement;
   appRef: HTMLDivElement;
-  introText: string = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus,
-  est id accumsan feugiat, lacus nisl lobortis ipsum, id tristique turpis turpis et orci.`;
-  introDescription: string = `Suspendisse
-  cursus eros vitae gravida molestie. Quisque bibendum, urna sed luctus tempus, metus purus bibendum
-  nibh, vitae aliquet odio libero nec velit.`;
   skills: Array<SkillChartProps> = [
     {
       percentage: 70,
@@ -56,7 +54,8 @@ class App extends React.Component<AppProps, AppState> {
       contactBody: '',
       contactMail: '',
       contactName: '',
-      contactSubject: ''
+      contactSubject: '',
+      ressource: RessourcesEn
     };
   }
 
@@ -107,32 +106,32 @@ class App extends React.Component<AppProps, AppState> {
           <div className="nav-tab-container">
               <Link to="app-header" spy={true} smooth={true} duration={1000}>
                 <div className="nav-tab">
-                    Home
+                    {this.state.ressource.menuHome}
                 </div>
               </Link>
               <Link to="app-intro" spy={true} smooth={true} duration={1000}  isDynamic={true}>
                 <div className="nav-tab">
-                    Intro
+                    {this.state.ressource.menuIntro}
                 </div>
               </Link>
               <Link to="app-xp" spy={true} smooth={true} duration={1000} >
                 <div className="nav-tab">
-                    Connaissances
+                    {this.state.ressource.menuSkills}
                 </div>
               </Link>
               <Link to="app-studies" spy={true} smooth={true} duration={1000} >
                 <div className="nav-tab">
-                    Études
+                    {this.state.ressource.menuFormation}
                 </div>
               </Link>
               <Link to="app-pro" spy={true} smooth={true} duration={1000} >
                 <div className="nav-tab">
-                    Expérience
+                    {this.state.ressource.menuXP}
                 </div>
               </Link>
               <Link to="app-contact" spy={true} smooth={true} duration={1000} >
                 <div className="nav-tab">
-                    Contact
+                    {this.state.ressource.menuContact}
                 </div>
               </Link>
           </div>
@@ -140,19 +139,17 @@ class App extends React.Component<AppProps, AppState> {
         <div className="app-header" id="app-header" ref={(input: HTMLDivElement) => { this.headerRef = input; }}>
           <div className="app-header-name">
             <h1 className="name">Sevket YALCIN</h1>
-            <div className="job">Developpeur Web</div>
+            <div className="job">{this.state.ressource.jobName}</div>
           </div>
           <img src={logo} />
           <Link to="app-intro" spy={true} smooth={true} duration={1000} className="arrow-container"  isDynamic={true}>
             <NextArrows darkColor={false}/>
           </Link>
         </div>
-        <SectionBlock name="app-intro" title="À propos de moi">
+        <SectionBlock name="app-intro" title={this.state.ressource.introTitle}>
           <div className="intro-text">
             <span>
-              {this.introText} <br /><br />
-              {this.introDescription} <br /><br />
-              {this.introDescription}
+              {this.state.ressource.introBody}
             </span>
             <img src={profil}/>
           </div>
@@ -160,7 +157,7 @@ class App extends React.Component<AppProps, AppState> {
             <NextArrows darkColor={false}/>
           </Link>
         </SectionBlock>
-        <SectionBlock name="app-xp" title="Connaissances">
+        <SectionBlock name="app-xp" title={this.state.ressource.skillsTitle}>
             {
               this.skills.map((item) => {
                 return <SkillChart 
@@ -174,17 +171,13 @@ class App extends React.Component<AppProps, AppState> {
             <NextArrows darkColor={true}/>
           </Link>
         </SectionBlock>
-        <SectionBlock name="app-studies" title="Études">
+        <SectionBlock name="app-studies" title={this.state.ressource.studiesTitle}>
             <div className="studies-header">
               <a target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><img src={exia} id="exiaLogo"/></a>
               <div className="studies-bloc">
-                <blockquote>L’exia.CESI forme des ingénieurs professionnels de l’informatique ancrés dans le 
-                  monde de l’entreprise.<br /><br />
-                  La pédagogie de l'exia.Cesi est basé sur la méthode d’apprentissage PBL (Problem-Based Learning).
-                  Cette pédagogie active place les étudiants dans des situations réelles d’entreprise.
-                </blockquote>
+                <blockquote>{this.state.ressource.studiesSchoolBody}</blockquote>
                 <a target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><i>
-                  Plus d'infos sur le site internet de l'exia.CESI
+                  {this.state.ressource.studiesMoreInfo}
                 </i></a>
               </div>
             </div>
@@ -192,15 +185,9 @@ class App extends React.Component<AppProps, AppState> {
               <div className="xp-bloc">
                 <span className="xp-date">Sept. 2010 - Juil. 2015</span> 
                 <span className="xp-text">
-                  <div className="xp-title">Exia, dominante software development</div>
+                  <div className="xp-title">{this.state.ressource.studiesMajor}</div>
                   <div><br />
-                    Apprentissage d'un bon nombre de languages de programmation,
-                    de base de données, de techniques de conception de systèmes 
-                    accompagné de projets d'équipe pour une mise en situation d'entreprise.<br /><br />
-                    La 5ème année était plus axée vers le management de projet (méthodologies, outils) tout en 
-                    menant un projet fil rouge (concours Nokia), un projet d'entrepreunariat (site de jeu en ligne),
-                    ainsi que la préparation de mon mémoire et de sa présentation (l'implantation de technologie 
-                    NFC chez l'humain).
+                    {this.state.ressource.studiesBody}
                   </div>
                 </span> 
               </div>
@@ -209,32 +196,32 @@ class App extends React.Component<AppProps, AppState> {
             <NextArrows darkColor={false}/>
           </Link>
         </SectionBlock>
-        <SectionBlock name="app-pro" title="Expérience professionnelle">
+        <SectionBlock name="app-pro" title={this.state.ressource.xpTitle}>
             <div className="pro-bloc">
               <span className="pro-date">Janv. 2018 - Janv. 2019</span> 
               <span className="pro-text">
-                Forcia
+                {this.state.ressource.xpForcia}
               </span>
             </div>
             <div className="pro-bloc">
               <span className="pro-date">Sept. 2015 - Janv. 2018</span> 
               <span className="pro-text">
-                IS
+              {this.state.ressource.xpIS}
               </span>
             </div>
             <div className="pro-bloc">
               <span className="pro-date">Janv. 2015 - Juil. 2015</span> 
               <span className="pro-text">
-                Stage
+              {this.state.ressource.xpStage}
               </span>
             </div>
             <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container">
               <NextArrows darkColor={true}/>
             </Link>
         </SectionBlock>
-        <SectionBlock name="app-contact" title="Contact">
+        <SectionBlock name="app-contact" title={this.state.ressource.contactTitle}>
           <p>
-            <label>Nom</label><br />
+            <label>{this.state.ressource.contactName}</label><br />
             <input type="text" value={this.state.contactName} id="contactName" name="contactName" onChange={this.handleInputChange}/>
           </p>
           <p>
@@ -242,15 +229,15 @@ class App extends React.Component<AppProps, AppState> {
             <input type="text" value={this.state.contactMail} id="contactMail" name="contactMail" onChange={this.handleInputChange}/>
           </p>
           <p>
-            <label>Sujet</label><br />
+            <label>{this.state.ressource.contactSubjet}</label><br />
             <input type="text" value={this.state.contactSubject} id="contactSubject" name="contactSubject" onChange={this.handleInputChange}/>
           </p>
           <p>
-            <label>Message</label><br />
+            <label>{this.state.ressource.contactMessage}</label><br />
             <textarea rows={10} value={this.state.contactBody} id="contactBody" name="contactBody" onChange={this.handleInputChange}/>
           </p>
           <p>
-            <button>Envoyer</button>
+            <button>{this.state.ressource.contactSend}</button>
           </p>
         </SectionBlock>
       </div>
@@ -270,6 +257,7 @@ interface AppState {
   contactMail: string;
   contactSubject: string;
   contactBody: string;
+  ressource: Ressource;
 }
 
 interface MyEventTarget extends EventTarget {
