@@ -39,12 +39,12 @@ class App extends React.Component<AppProps, AppState> {
       title: 'Angular'
     },
     {
-      percentage: 80,
+      percentage: 70,
       title: 'SQL'
     },
     {
-      percentage: 80,
-      title: 'ALM'
+      percentage: 70,
+      title: 'ALM / Agile'
     },
     {
       percentage: 50,

@@ -1,15 +1,15 @@
 const ressources = {
-    jobName:  'Web Developer',
+    jobName:  'Full Stack Web Developer',
     menuHome:  'Home',
     menuIntro:  'About me',
     menuSkills:  'Skills',
     menuFormation:  'Studies',
     menuXP:  'Experience',
     menuContact:  'Contact',
-    introTitle:  'À propos de moi',
-    introBody: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus, est id accumsan feugiat, lacus nisl lobortis ipsum, id tristique turpis turpis et orci.<br/> <br/>
-    Suspendisse cursus eros vitae gravida molestie. Quisque bibendum, urna sed luctus tempus, metus purus bibendum nibh, vitae aliquet odio libero nec velit.<br/> <br/>
-    Suspendisse cursus eros vitae gravida molestie. Quisque bibendum, urna sed luctus tempus, metus purus bibendum nibh, vitae aliquet odio libero nec velit.`,
+    introTitle:  'About me',
+    introBody: `Enthusiastic developer from France, I am motivated by challenging projects and passionate about Web technologies (especially React and its ecosystem), Test-Driven Development and Agile Development. <br /><br />
+    I am currently working at <a target="blank" href="https://www.forcia.com/">Forcia</a> in Tokyo where I focus on building web applications, implementing testing processes and tooling around Application Lifecycle Management. <br /><br />
+    My second passion is Language/Culture Exchange (English and Japanese), it's the reason why I am currently living in Japan!`,
     skillsTitle:  'Compétences',
     studiesTitle:  'Études',
     studiesSchoolBody: `L’exia.CESI forme des ingénieurs professionnels de l’informatique ancrés dans le monde de l’entreprise.<br/> <br/>
