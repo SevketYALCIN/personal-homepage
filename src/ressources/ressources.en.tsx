@@ -12,12 +12,12 @@ const ressources = {
     My main hobby is Language and Culture Exchange (English and Japanese), it's the reason why I am currently living in Japan!`,
     skillsTitle:  'Skills',
     studiesTitle:  'Studies',
-    studiesSchoolBody: `Exia.Cesi is an engineering school located in many cities in France, specializing in Information Technologies.<br/> <br/>
-    The learning system used at Exia.Cesi is called PBL: Problem-Based Learning. This pedagogy makes students solve complex problems you could have in real company projects.`,
+    studiesSchoolBody: `Exia.Cesi is an engineering school located in France, specializing in Information Technologies.<br/> <br/>
+    The learning system used at Exia.Cesi is called PBL: Problem-Based Learning. It's a pedagogy in which students learn about IT through the experience of solving a real-world problem or answering a complex question.`,
     studiesMoreInfo:  'More information on Exia.Cesi\'s website (French).',
     studiesMajor:  'Exia, Software Engineering Master\'s Degree',
     studiesBody: `Learned how to code using many programming languages, modeling languages and database systems through many team projects during 5 years.<br/> <br/>
-    The fifth and last year is focused on IT projects management, while working on long term projects : Windows Phone App contest by Nokia (as a team), entrepreneurial project (HTML5 Games website as a team), and finally working on my Master Thesis: NFC implants, possibilities and risks.`,
+    The last year was mainly about IT project management, while working on long term projects : Windows Phone App contest by Nokia (as a team), entrepreneurial project (HTML5 Games website as a team), and finally working on my Master Thesis: NFC implants, possibilities and risks.`,
     xpTitle:  'Work experience',
     xpForciaTitle:  'Forcia, Tokyo (Japan)',
     xpForciaBody:  `
@@ -34,7 +34,7 @@ const ressources = {
     xpStageBody: `
     <li>Developed the Human Ressources employee management web application using ASP.NET</li>
     <li>Bugfixed the existing payroll web application using ASP.NET</li>`,
-    xpStageDate:  `Jan. 2015 - Jul. 2015`,
+    xpStageDate:  `Jan. 2015 - July 2015`,
     contactTitle:  'Contact',
     contactName:  'Name',
     contactSubjet:  'Subject',
