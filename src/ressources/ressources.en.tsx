@@ -19,9 +19,22 @@ const ressources = {
     studiesBody: `Learned how to code using many programming languages, modeling languages and database systems through many team projects during 5 years.<br/> <br/>
     The fifth and last year is focused on IT projects management, while working on long term projects : Windows Phone App contest by Nokia (as a team), entrepreneurial project (HTML5 Games website as a team), and finally working on my Master Thesis: NFC implants, possibilities and risks.`,
     xpTitle:  'Work experience',
-    xpForcia:  'Forcia',
-    xpIS:  'IS',
-    xpStage:  'Stage',
+    xpForciaTitle:  'Forcia, Tokyo (Japan)',
+    xpForciaBody:  `
+    <li>Developed web applications focusing on fast, multiple-criteria search engine using company's JS framework.</li>
+    <li>Implemented tests and testing frameworks (Integration, API, Load, UI, etc.)</li>`,
+    xpForciaDate:  'Jan. 2018 - Jan. 2019',
+    xpISTitle:  'Infinite Square, Paris (France)',
+    xpISBody: `
+    <li>Developed Cross-Platform application using Angular/Cordova and ASP.NET API.</li>
+    <li>Developed back-end web application suite using ASP.NET, Angular.</li>
+    <li>Set up ALM processes on many projects (CI/CD, cloud environments) using VSTS/Azure.</li>`,
+    xpISDate:  'Sep. 2015 - Jan. 2018',
+    xpStageTitle:  `Technology & Strategy, Strasbourg (France)`,
+    xpStageBody: `
+    <li>Developed the Human Ressources employee management web application using ASP.NET</li>
+    <li>Bugfixed the existing payroll web application using ASP.NET</li>`,
+    xpStageDate:  `Jan. 2015 - Jul. 2015`,
     contactTitle:  'Contact',
     contactName:  'Name',
     contactSubjet:  'Subject',

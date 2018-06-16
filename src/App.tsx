@@ -4,6 +4,7 @@ import { Link, scrollSpy } from 'react-scroll';
 import NextArrows from './components/ui/next-arrows/next-arrows';
 import SkillChart, { SkillChartProps } from './components/ui/skill-chart/skill-chart';
 import SectionBlock from './components/section-block/section-block';
+import XpBlock from './components/xp-block/xp-block';
 import RessourcesFr from './ressources/ressources.fr';
 import RessourcesEn from './ressources/ressources.en';
 import Ressource from './ressources/ressource';
@@ -27,16 +28,16 @@ class App extends React.Component<AppProps, AppState> {
   appRef: HTMLDivElement;
   skills: Array<SkillChartProps> = [
     {
-      percentage: 70,
-      title: 'React'
+      percentage: 60,
+      title: 'React / Angular'
     },
     {
       percentage: 75,
-      title: 'C# / ASP.NET Core'
+      title: 'ASP.NET Core / C#'
     },
     {
       percentage: 40,
-      title: 'Angular'
+      title: 'Node.js'
     },
     {
       percentage: 70,
@@ -240,18 +241,21 @@ class App extends React.Component<AppProps, AppState> {
           </Link>
         </SectionBlock>
         <SectionBlock name="app-pro" title={this.state.ressource.xpTitle}>
-            <div className="pro-bloc">
-              <span className="pro-date">Janv. 2018 - Janv. 2019</span> 
-              <span className="pro-text" dangerouslySetInnerHTML={{__html: this.state.ressource.xpForcia}} />
-            </div>
-            <div className="pro-bloc">
-              <span className="pro-date">Sept. 2015 - Janv. 2018</span> 
-              <span className="pro-text" dangerouslySetInnerHTML={{__html: this.state.ressource.xpIS}} />
-            </div>
-            <div className="pro-bloc">
-              <span className="pro-date">Janv. 2015 - Juil. 2015</span> 
-              <span className="pro-text" dangerouslySetInnerHTML={{__html: this.state.ressource.xpStage}} />
-            </div>
+            <XpBlock 
+              date={this.state.ressource.xpForciaDate}
+              title={this.state.ressource.xpForciaTitle} 
+              body={this.state.ressource.xpForciaBody} 
+            />
+            <XpBlock 
+              date={this.state.ressource.xpISDate}
+              title={this.state.ressource.xpISTitle} 
+              body={this.state.ressource.xpISBody} 
+            />
+            <XpBlock 
+              date={this.state.ressource.xpStageDate}
+              title={this.state.ressource.xpStageTitle} 
+              body={this.state.ressource.xpStageBody} 
+            />
             <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container">
               <NextArrows darkColor={true}/>
             </Link>

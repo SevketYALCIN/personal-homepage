@@ -15,9 +15,15 @@ type Ressource = {
     studiesMajor:  string;
     studiesBody: string;
     xpTitle:  string;
-    xpForcia:  string;
-    xpIS:  string;
-    xpStage:  string;
+    xpForciaDate: string;
+    xpForciaTitle:  string;
+    xpForciaBody:  string;
+    xpISDate: string;
+    xpISTitle:  string;
+    xpISBody:  string;
+    xpStageDate: string;
+    xpStageTitle:  string;
+    xpStageBody:  string;
     contactTitle:  string;
     contactName:  string;
     contactSubjet:  string;
