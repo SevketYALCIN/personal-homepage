@@ -7,9 +7,10 @@ const ressources = {
     menuXP:  'Expérience',
     menuContact:  'Contact',
     introTitle:  'À propos de moi',
-    introBody: `Enthusiastic developer from France, I am motivated by challenging projects and passionate about Web technologies (especially React and its ecosystem), Test-Driven Development and Agile Development. <br /><br />
-    I am currently working at <a target="blank" href="https://www.forcia.com/">Forcia</a> in Tokyo where I focus on building web applications, implementing testing processes and tooling around Application Lifecycle Management. <br /><br />
-    My main hobby is Language and Culture Exchange (English and Japanese), it's the reason why I am currently living in Japan!`,
+    introBody: `
+    Je suis passioné par les techologies du Web (spécialement React et son eco-système), le TDD ainsi que les méthodes agiles.<br /><br />
+    Enthousiaste, je travaille actuellement pour <a target="blank" href="https://www.forcia.com/">Forcia</a> à Tokyo où je participe au développement d'applications Web grand public, au testing automatique et à la création de process et outils autour de l'ALM.<br /><br />
+    Je suis également passioné les langues et cultures étrangères, surtout la culture japonaise !`,
     skillsTitle:  'Compétences',
     studiesTitle:  'Études',
     studiesSchoolBody: `L’exia.CESI forme des ingénieurs professionnels de l’informatique ancrés dans le monde de l’entreprise.<br/> <br/>
@@ -39,7 +40,8 @@ const ressources = {
     contactName:  'Nom',
     contactSubjet:  'Objet',
     contactMessage:  'Message',
-    contactSend:  'Contacter'
+    contactSend:  'Contacter',
+    studiesDate: 'Sept. 2010 - Juil. 2015'
 };
 
 export default ressources;

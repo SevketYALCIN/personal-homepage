@@ -39,7 +39,8 @@ const ressources = {
     contactName:  'Name',
     contactSubjet:  'Subject',
     contactMessage:  'Message',
-    contactSend:  'Send'
+    contactSend:  'Send',
+    studiesDate: 'Sep. 2010 - July 2015'
 };
 
 export default ressources;

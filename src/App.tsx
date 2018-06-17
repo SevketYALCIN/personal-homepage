@@ -227,7 +227,7 @@ class App extends React.Component<AppProps, AppState> {
             </div>
             <div className="studies-xp">
               <div className="xp-bloc">
-                <span className="xp-date">Sept. 2010 - Juil. 2015</span> 
+                <span className="xp-date">{this.state.ressource.studiesDate}</span> 
                 <span className="xp-text">
                   <div className="xp-title">{this.state.ressource.studiesMajor}</div>
                   <div><br />

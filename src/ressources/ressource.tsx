@@ -29,6 +29,7 @@ type Ressource = {
     contactSubjet:  string;
     contactMessage:  string;
     contactSend: string;
+    studiesDate: string;
 };
 
 export default Ressource;
