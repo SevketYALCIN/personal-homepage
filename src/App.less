@@ -133,7 +133,8 @@
         width: 70%;
 
         a {
-          float: right;
+          float: right;    
+          width: auto;
         }
 
         blockquote {
@@ -347,4 +348,21 @@ button {
   height: calc(~"100% - 100px");
   margin: 50px 0;
   width: 100%;
+}
+
+
+// < 1250px width Responsive
+
+@media only screen and (max-width: 1250px) {
+  .app-navbar .nav-tab-container .nav-tab{
+    width: 130px;
+  }
+}
+
+// < 100px width Responsive => mobile mode
+
+@media only screen and (max-width: 1250px) {
+  .app-navbar .nav-tab-container .nav-tab{
+    width: 130px;
+  }
 }
