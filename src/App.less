@@ -357,12 +357,40 @@ button {
   .app-navbar .nav-tab-container .nav-tab{
     width: 130px;
   }
+
+  .app-header{
+    overflow: hidden;
+    img{
+      height: 100vh;
+      width: auto;
+      transform: scale(2,2);
+      filter: blur(1px);
+    }
+  }
 }
 
-// < 100px width Responsive => mobile mode
+// < 500px width Responsive => mobile mode
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 600px) {
   .app-navbar .nav-tab-container .nav-tab{
     width: 130px;
+  }
+
+  .app-header{
+    .app-header-name{
+      padding: 0;
+      border: none;
+
+      .name{
+        font-size: 11vw;
+      }
+      .job{
+        font-size: 7.5vw;
+      }
+    }
+  }
+
+  section{
+    overflow: hidden;
   }
 }
