@@ -366,6 +366,21 @@ button {
       transform: scale(2,2);
       filter: blur(1px);
     }
+  }  
+  
+  .app-intro .intro-text {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    span {
+      width: auto;
+    }
+
+    img{
+      width: 150px;
+      height: 150px;
+      margin-bottom: 5px;
+    }
   }
 }
 
@@ -392,5 +407,54 @@ button {
 
   section{
     overflow: hidden;
+    height: 100vh;
+
+    .section-container{
+      margin: 0;
+      height: auto;
+    }
+  }
+
+  .next-arrows-container{
+    height: 55px !important;
+  }
+
+  .app-navbar{
+    display: none !important;
+  }
+
+  .app-intro{
+
+    .section-body{
+      width: auto;
+      padding: 0 10px;
+    } 
+  }
+
+  #app-xp{
+    .section-body .skill-chart{
+      width: auto;
+    }
+  }
+
+  h3 {
+    margin: 10px 0;
+  }
+  h2{
+    margin-bottom: 20px !important;
+  }
+
+  ///// SKILL Chart /////
+  .skill-chart{
+    margin:0 !important;
+
+    .radial-progress{
+      transform: scale(0.85);
+    }
+
+    h3{
+      font-size: 14px;
+      margin: 0;
+    }
   }
 }
