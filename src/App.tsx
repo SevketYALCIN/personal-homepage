@@ -220,7 +220,7 @@ class App extends React.Component<AppProps, AppState> {
               <a target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><img src={exia} id="exiaLogo"/></a>
               <div className="studies-bloc">
                 <blockquote dangerouslySetInnerHTML={{__html: this.state.ressource.studiesSchoolBody}} />
-                <a target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><i>
+                <a className="desktop-only" target="blank" href="https://exia.cesi.fr/ecole-ingenieur-informatique"><i>
                   {this.state.ressource.studiesMoreInfo}
                 </i></a>
               </div>

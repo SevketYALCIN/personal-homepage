@@ -18,8 +18,8 @@ const ressources = {
     studiesMoreInfo:  'Plus d\'infos sur le site internet de l\'exia.CESI',
     studiesMajor:  'Exia, dominante software development',
     studiesBody: `Apprentissage d'un bon nombre de langages de programmation, de base de données, de techniques de conception de systèmes à travers des projets d'équipe.<br/> <br/>
-    La 5ème année était plus axée vers le management de projet (méthodologies, outils) tout en menant un projet fil rouge (concours Nokia), un projet d'entreprenariat (site de jeu en ligne), ainsi que la préparation de mon mémoire et de sa présentation (l'implantation de technologie NFC chez l'humain).`,
-    xpTitle:  'Expérience professionnelle',
+    <span class="desktop-only">La 5ème année était plus axée vers le management de projet (méthodologies, outils) tout en menant un projet fil rouge (concours Nokia), un projet d'entreprenariat (site de jeu en ligne), ainsi que la préparation de mon mémoire et de sa présentation (l'implantation de technologie NFC chez l'humain).</span>`,
+    xpTitle:  'Expérience',
     xpForciaTitle:  'Forcia, Tokyo (Japon)',
     xpForciaBody:  `
     <li>Participé au développement de moteur de recherche multi-critères performant au sein d'un site Web en utilisant le framework JS propriétaire.</li>

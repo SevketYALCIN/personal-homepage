@@ -16,8 +16,8 @@ const ressources = {
     The learning system used at Exia.Cesi is called PBL: Problem-Based Learning. It's a pedagogy in which students learn about IT through the experience of solving a real-world problem or answering a complex question.`,
     studiesMoreInfo:  'More information on Exia.Cesi\'s website (French)',
     studiesMajor:  'Exia, Software Engineering Master\'s Degree',
-    studiesBody: `Learned how to code using many programming languages, modeling languages and database systems through many team projects during 5 years.<br/> <br/>
-    The last year was mainly about IT project management, while working on long term projects : Windows Phone App contest by Nokia (as a team), entrepreneurial project (HTML5 Games website as a team), and finally working on my Master Thesis: NFC implants, possibilities and risks.`,
+    studiesBody: `Learned IT using many programming languages, modeling languages and database systems through many team projects during 5 years.<br/> <br/>
+    <span class="desktop-only">The last year was mainly about IT project management, while working on long term projects : Windows Phone App contest by Nokia (as a team), entrepreneurial project (HTML5 Games website as a team), and finally working on my Master Thesis: NFC implants, possibilities and risks.</span>`,
     xpTitle:  'Work experience',
     xpForciaTitle:  'Forcia, Tokyo (Japan)',
     xpForciaBody:  `

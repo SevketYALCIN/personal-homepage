@@ -184,10 +184,6 @@
   .section-container {
     width: 60%;
     text-align: left;
-
-    .section-body{
-      width: 100%;
-    }
   }
 }
 
@@ -387,10 +383,62 @@ button {
 // < 500px width Responsive => mobile mode
 
 @media only screen and (max-width: 600px) {
+
+  // Global 
+
+  body{
+    font-size: 14px;
+  }
+
+  .desktop-only{
+    display: none !important;
+  }
+
   .app-navbar .nav-tab-container .nav-tab{
     width: 130px;
   }
 
+  section{
+    overflow: hidden;
+    height: 100vh;
+
+    .section-container{
+      margin: 0;
+      height: auto;
+      width: 100% !important;
+      min-height: 75%;
+      justify-content: space-evenly;
+
+      .section-body{
+        width: 95%;
+      }
+    }
+  }
+
+  .next-arrows-container{
+    height: 55px !important;
+  }
+
+  .app-navbar{
+    display: none !important;
+  }
+
+  h3 {
+    margin: 10px 0;
+  }
+  h2{
+    margin-bottom: 20px !important;
+  }
+
+  input, textarea{
+    width: calc(~'100% - 10px');
+  }
+
+  button{
+    width: 100%;
+  }
+
+  // APP HEADER
   .app-header{
     .app-header-name{
       padding: 0;
@@ -405,43 +453,21 @@ button {
     }
   }
 
-  section{
-    overflow: hidden;
-    height: 100vh;
-
-    .section-container{
-      margin: 0;
-      height: auto;
-    }
-  }
-
-  .next-arrows-container{
-    height: 55px !important;
-  }
-
-  .app-navbar{
-    display: none !important;
-  }
+  // APP INTRO 
 
   .app-intro{
 
     .section-body{
       width: auto;
-      padding: 0 10px;
     } 
   }
+
+  // APP XP
 
   #app-xp{
     .section-body .skill-chart{
       width: auto;
     }
-  }
-
-  h3 {
-    margin: 10px 0;
-  }
-  h2{
-    margin-bottom: 20px !important;
   }
 
   ///// SKILL Chart /////
@@ -456,5 +482,64 @@ button {
       font-size: 14px;
       margin: 0;
     }
+  }
+
+  // APP SCHOOL
+  #app-studies{
+    .section-container .studies-header {
+      flex-direction: column;
+      align-items: center;
+
+      .studies-bloc{
+        width: 100%;
+      }
+
+      a {
+        width: 40%;
+        margin-bottom: 5vh;
+      }
+    }
+    
+    .section-container .studies-xp{
+        width: 100%;
+        margin-top: 5vh;
+
+        .xp-title{
+          font-size: 17px;
+        }
+
+        .xp-bloc{
+          .xp-date{
+            padding-right: 5px;
+          }
+        }
+    }
+  }
+
+  // APP PRO
+  .pro-bloc{
+    .pro-text {
+      .pro-title{
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 20px;
+      }
+
+      .pro-body{
+        font-size: inherit !important;
+        margin: 5px 0;
+
+        li{
+          font-size: 13px !important;
+        }
+      } 
+    }
+  }
+  
+  
+// < 330px width Responsive => small mobile mode
+
+  @media only screen and (max-width: 330px) {
+
   }
 }
