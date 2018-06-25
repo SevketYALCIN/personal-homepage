@@ -4,5 +4,5 @@ import App from './App';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App isMobile={false} />, div);
+  ReactDOM.render(<App isEnglish={true} />, div);
 });

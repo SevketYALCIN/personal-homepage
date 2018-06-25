@@ -62,7 +62,7 @@ class App extends React.Component<AppProps, AppState> {
       contactName: '',
       contactSubject: '',
       ressource: RessourcesEn,
-      lang: Lang.English
+      lang: this.props.isEnglish ? Lang.English : Lang.French
     };
   }
 
@@ -289,7 +289,7 @@ class App extends React.Component<AppProps, AppState> {
 export default App;
 
 interface AppProps {
-  isMobile: boolean;
+  isEnglish: boolean;
 }
 
 interface AppState {
