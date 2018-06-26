@@ -1,8 +1,7 @@
 import express from 'express';
-// we'll talk about this in a minute:
 import serverRenderer from './middleware/renderer';
 
-const PORT = 3000;
+const PORT = 5000;
 const path = require('path');
 const sgMail = require('@sendgrid/mail');
 
@@ -14,14 +13,13 @@ const router = express.Router();
 
 // root (/) should always serve our server rendered page
 router.use('^/$', serverRenderer);
+router.use('^/fr/$', serverRenderer);
 
 // other static resources should just be served as they are
 router.use(express.static(
     path.resolve(__dirname, '..', 'build'),
     { maxAge: '30d' },
 ));
-
-router.use('*', serverRenderer);
 
 // add contact form mailing route
 app.post('/contact', function (req, res) {
@@ -39,6 +37,11 @@ app.post('/contact', function (req, res) {
 
 // tell the app to use the above rules
 app.use(router);
+
+// redirect unmatched requests to EN version
+app.use(function (req, res) {
+    res.redirect("/");
+});
 
 // start the app
 app.listen(PORT, (error) => {

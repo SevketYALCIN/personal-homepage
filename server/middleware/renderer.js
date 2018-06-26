@@ -1,7 +1,5 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
-
-// import our main App component
 import App from '../../src/App';
 
 const path = require("path");
@@ -15,8 +13,9 @@ export default (req, res, next) => {
             console.error('err', err);
             return res.status(404).end()
         }
+        let isEnglish = req.originalUrl == "/fr/" ? false : true;
         // render the app as a string
-        const html = ReactDOMServer.renderToNodeStream(<App />);
+        const html = ReactDOMServer.renderToNodeStream(<App isEnglish={false}/>);
         // inject the rendered app into our html and send it
         return res.send(
             htmlData.replace(
