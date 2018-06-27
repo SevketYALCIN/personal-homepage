@@ -26,8 +26,7 @@
     "build-js": "react-scripts-ts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject",
-    "server": "node server/bootstrap.js"
+    "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",

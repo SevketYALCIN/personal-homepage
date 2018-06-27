@@ -1,3 +1,3 @@
 # personal-homepage
 
-Homepage/Portfolio website using React, Typescript and Express for server side rendering.
+Homepage website using Create-React-App with Typescript and Less.
