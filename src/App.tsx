@@ -8,6 +8,7 @@ import XpBlock from './components/xp-block/xp-block';
 import RessourcesFr from './ressources/ressources.fr';
 import RessourcesEn from './ressources/ressources.en';
 import Ressource from './ressources/ressource';
+import { Helmet } from 'react-helmet';
 
 const logo = require('./assets/splash.jpg');
 const profil = require('./assets/profile.jpg');
@@ -57,40 +58,9 @@ class App extends React.Component<AppProps, AppState> {
     super(props);
     this.state = {
       navbar: false,
-      contactBody: '',
-      contactMail: '',
-      contactName: '',
-      contactSubject: '',
       ressource: RessourcesEn,
       lang: this.props.isEnglish ? Lang.English : Lang.French
     };
-  }
-
-  handleInputChange = (event: MyFormEvent<HTMLElement>) => {
-    const target = event.target;
-    let value = '';
-    let name = '';
-    if (target) {
-      value = target.value;
-      name = target.name;
-    }
-
-    switch (name) {
-      case 'contactMail':
-        this.setState((current) => ({ ...current, contactMail: value }));
-        break;
-      case 'contactName':
-        this.setState((current) => ({ ...current, contactName: value }));
-        break;
-      case 'contactBody':
-        this.setState((current) => ({ ...current, contactBody: value }));
-        break;
-      case 'contactSubject':
-        this.setState((current) => ({ ...current, contactSubject: value }));
-        break;
-      default:
-        break;
-    }
   }
 
   changeLang = (language: Lang) => {
@@ -118,6 +88,10 @@ class App extends React.Component<AppProps, AppState> {
   render() {
     return (
       <div className="app" ref={(input: HTMLDivElement) => { this.appRef = input; }}>
+        <Helmet>
+          <title>Sevket YALCIN - Full Stack Web Developer</title>
+          <meta name="description" content="" />
+        </Helmet>
         <div className={`app-navbar ${this.state.navbar ? 'is-active' : ''} `}>
           <div className="nav-tab-container">
               <Link to="app-header" spy={true} smooth={true} duration={1000}>
@@ -143,11 +117,6 @@ class App extends React.Component<AppProps, AppState> {
               <Link to="app-pro" spy={true} smooth={true} duration={1000} >
                 <div className="nav-tab">
                     {this.state.ressource.menuXP}
-                </div>
-              </Link>
-              <Link to="app-contact" spy={true} smooth={true} duration={1000} >
-                <div className="nav-tab">
-                    {this.state.ressource.menuContact}
                 </div>
               </Link>
           </div>
@@ -256,30 +225,6 @@ class App extends React.Component<AppProps, AppState> {
               title={this.state.ressource.xpStageTitle} 
               body={this.state.ressource.xpStageBody} 
             />
-            <Link to="app-contact" spy={true} smooth={true} duration={1000} className="arrow-container">
-              <NextArrows darkColor={true}/>
-            </Link>
-        </SectionBlock>
-        <SectionBlock name="app-contact" title={this.state.ressource.contactTitle}>
-          <p>
-            <label>{this.state.ressource.contactName}</label><br />
-            <input type="text" value={this.state.contactName} id="contactName" name="contactName" onChange={this.handleInputChange}/>
-          </p>
-          <p>
-            <label>E-Mail</label><br />
-            <input type="text" value={this.state.contactMail} id="contactMail" name="contactMail" onChange={this.handleInputChange}/>
-          </p>
-          <p>
-            <label>{this.state.ressource.contactSubjet}</label><br />
-            <input type="text" value={this.state.contactSubject} id="contactSubject" name="contactSubject" onChange={this.handleInputChange}/>
-          </p>
-          <p>
-            <label>{this.state.ressource.contactMessage}</label><br />
-            <textarea rows={10} value={this.state.contactBody} id="contactBody" name="contactBody" onChange={this.handleInputChange}/>
-          </p>
-          <p>
-            <button>{this.state.ressource.contactSend}</button>
-          </p>
         </SectionBlock>
       </div>
     );
@@ -294,19 +239,6 @@ interface AppProps {
 
 interface AppState {
   navbar: boolean;
-  contactName: string;
-  contactMail: string;
-  contactSubject: string;
-  contactBody: string;
   ressource: Ressource;
   lang: Lang;
-}
-
-interface MyEventTarget extends EventTarget {
-  value: string;
-  name: string;
-}
-
-interface MyFormEvent<T> extends React.FormEvent<T> {
-  target: MyEventTarget;
 }
